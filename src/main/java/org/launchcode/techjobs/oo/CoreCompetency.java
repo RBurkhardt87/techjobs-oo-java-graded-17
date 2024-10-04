@@ -39,6 +39,19 @@ public class CoreCompetency {
     }
 
     // TODO: Use the "Generate" tool to add a getter and setter for the 'value' field but
-    //  ONLY a getter for the 'id' field.
+    //  ONLY a getter for the 'id' field.    <---- DONE
 
+    //Getters/Setters for value:
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    //Getter for id:
+    public int getId() {
+        return id;
+    }
 }
