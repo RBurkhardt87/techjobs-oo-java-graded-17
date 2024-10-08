@@ -18,11 +18,12 @@ public class JobTest {
 
 }
 
-    //TODO: Test the full constructor:
+
+
     // use getters to check the values for assertEquals--There were 2 ways: One that went from job object to param object and then got the value.
     // IntelliJ suggested wrapping the jobObject.paramObject in a String.valueOf, which allowed access to the param object as a String I think....
     // It was kind of tricky doing the assertTrue() without having the new objects stored in their own variables. Not sure if this is done correctly... but it passes
-    //
+    //TODO: Test the full constructor:
     @Test
     public void testJobConstructorSetsAllFields(){
         Job job3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
@@ -55,9 +56,13 @@ public class JobTest {
     }
 
 
+
     //TODO: Test the equals method:
     @Test
     public void testJobsForEquality(){
+        Job job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Job job5 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        assertFalse(job4.equals(job5));
 
     }
 }

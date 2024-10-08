@@ -24,9 +24,9 @@ public class PositionType {
         return value;
     }
 
-    // TODO: Add custom equals and hashCode methods. Consider two PositionType objects "equal" when
-    //  their id fields match.    <--- MAY WANT TO GO AND MAKE SURE I ADDED THE CORRECT ONE
 
+    // TODO: Add custom equals and hashCode methods. Consider two PositionType objects "equal" when
+    //  their id fields match.    <--- DONE
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
