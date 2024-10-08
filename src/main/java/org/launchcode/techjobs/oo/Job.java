@@ -97,5 +97,24 @@ public class Job {
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
+
+
+    //TODO: Create a toString method using TDD
+    @Override
+    public String toString() {
+        String newline = System.lineSeparator();
+        if(getEmployer()==null && getLocation()==null && getLocation()==null && getPositionType()==null && getCoreCompetency()==null){
+            return "OOPS! This job does not seem to exist.";
+        } else {
+            return newline +
+                    "ID: " + getId() + newline +
+                    "Employer: " + (getEmployer() == null ? "Data not available" : getEmployer()) + newline +
+                    "Location: " + (getLocation() == null ? "Data not available" : getLocation()) + newline +
+                    "Position Type: " + (getPositionType() == null ? "Data not available" : getPositionType()) + newline +
+                    "Core Competencies: " + (getCoreCompetency() == null ? "Data not available" : getCoreCompetency()) + newline;
+        }
+        }
+
 }
 
+//Ternary: condition ? exprIfTrue : exprIfFalse

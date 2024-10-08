@@ -51,8 +51,6 @@ public class JobTest {
         String actual4 = String.valueOf(job3.getCoreCompetency());
         assertEquals(expected4, actual4);
         assertTrue(job3.getCoreCompetency() instanceof CoreCompetency);
-
-
     }
 
 
@@ -63,6 +61,57 @@ public class JobTest {
         Job job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         Job job5 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         assertFalse(job4.equals(job5));
+    }
 
+
+
+    //TODO: toString should return a blank line before and after the job info
+    //use assertEquals to verify
+    @Test
+    public void testToStringStartsAndEndsWithNewLine(){
+        Job job6 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        String actual = job6.toString();
+        String expected = System.lineSeparator() + System.lineSeparator();
+
+//      assertEquals(expected, actual);     <--- I DO NOT UNDERSTAND HOW TO DO THIS AS AN EQUAL. WHEN I START BUILDING MORE FOR toString, TEST FAILS BECAUSE THEY AREN'T EQUAL ANYMORE
+        assertTrue(actual.startsWith(System.lineSeparator()));
+        assertTrue(actual.endsWith(System.lineSeparator()));
+    }
+
+
+
+    //TODO: toString should contain a label for each field, followed by the data stored in that field. Each field should be on its own line
+    @Test
+    public void testToStringContainsCorrectLabelsAndData(){
+        Job job6 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        String actual = job6.toString();
+        String expected = System.lineSeparator() + "ID: " + job6.getId() + System.lineSeparator() + "Employer: " + job6.getEmployer() +
+                System.lineSeparator() + "Location: " + job6.getLocation() + System.lineSeparator() + "Position Type: " + job6.getPositionType() +
+                System.lineSeparator() + "Core Competencies: " + job6.getCoreCompetency() + System.lineSeparator();
+        assertEquals(expected, actual);
+    }
+
+
+    //So... the job will always have an ID. This field can't come up as Data not available because it is set with the constructor and not a arg passed in...right?
+    //TODO: If a field is empty, the method should add, “Data not available” after the label.
+    @Test
+    public void testToStringHandlesEmptyField(){
+        Job job6 = new Job();
+        String actual = job6.toString();
+        String expected = System.lineSeparator() + "ID: " + job6.getId() + System.lineSeparator() + "Employer: Data not available" +
+                System.lineSeparator() + "Location: Data not available" + System.lineSeparator() + "Position Type: Data not available" +
+                System.lineSeparator() + "Core Competencies: Data not available" + System.lineSeparator();;
+        assertEquals(expected, actual);
+    }
+
+
+    //This messes with the test above. I can't just add a field arg in to make them different because neither of the two constructors would allow it. How do I test these two
+    //different tests using the empty job constructor
+    //TODO: (Optional) If a Job object ONLY contains data for the id field, the method should return, “OOPS! This job does not seem to exist.”
+    @Test
+    public void testForJobsThatDontExist(){
+        Job job6 = new Job();
+        String actual = job6.toString();
+        String expected = "OOPS! This job does not seem to exist.";
     }
 }
