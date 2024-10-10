@@ -18,8 +18,6 @@ public class JobTest {
 
 }
 
-
-
     // use getters to check the values for assertEquals--There were 2 ways: One that went from job object to param object and then got the value.
     // IntelliJ suggested wrapping the jobObject.paramObject in a String.valueOf, which allowed access to the param object as a String I think....
     // It was kind of tricky doing the assertTrue() without having the new objects stored in their own variables. Not sure if this is done correctly... but it passes
@@ -70,12 +68,18 @@ public class JobTest {
     @Test
     public void testToStringStartsAndEndsWithNewLine(){
         Job job6 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        String actual = job6.toString();
-        String expected = System.lineSeparator() + System.lineSeparator();
+//        String actual = job6.toString();
+        boolean actual1 = job6.toString().startsWith(System.lineSeparator());
+        boolean actual2 = job6.toString().endsWith(System.lineSeparator());
 
+//        String expected = System.lineSeparator() + System.lineSeparator();
 //      assertEquals(expected, actual);     <--- I DO NOT UNDERSTAND HOW TO DO THIS AS AN EQUAL. WHEN I START BUILDING MORE FOR toString, TEST FAILS BECAUSE THEY AREN'T EQUAL ANYMORE
-        assertTrue(actual.startsWith(System.lineSeparator()));
-        assertTrue(actual.endsWith(System.lineSeparator()));
+
+//        assertTrue(actual.startsWith(System.lineSeparator()));
+//        assertTrue(actual.endsWith(System.lineSeparator()));
+        //What about this... why wouldn't this work. Testing true for true with assertEquals()
+        assertEquals(true, actual1);
+        assertEquals(true, actual2);
     }
 
 
