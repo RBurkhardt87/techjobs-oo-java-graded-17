@@ -31,7 +31,7 @@ public class JobTest {
         assertTrue(job3 instanceof Job);
 
         String expected1 = "ACME";
-        String actual1 = String.valueOf(job3.getEmployer());
+        String actual1 = job3.getEmployer().getValue();
         assertEquals(expected1, actual1);
         assertTrue(job3.getEmployer() instanceof Employer);
 
@@ -46,7 +46,7 @@ public class JobTest {
         assertTrue(job3.getPositionType() instanceof PositionType);
 
         String expected4 = "Persistence" ;
-        String actual4 = String.valueOf(job3.getCoreCompetency());
+        String actual4 = job3.getCoreCompetency().getValue();
         assertEquals(expected4, actual4);
         assertTrue(job3.getCoreCompetency() instanceof CoreCompetency);
     }

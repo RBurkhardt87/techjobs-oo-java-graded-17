@@ -32,6 +32,9 @@ public class Job extends JobField {
         this.coreCompetency = coreCompetency;
     }
 
+    //* TRYING TO FIGURE OUT HOW TO ADD THE OPTIONAL UNIT TEST IN. DON'T KNOW ANY OTHER WAY THAN CREATING A NEW CONSTRUCTOR
+    //TODO: Create a constructor that takes in name only to test with
+
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.    <---- DONE
