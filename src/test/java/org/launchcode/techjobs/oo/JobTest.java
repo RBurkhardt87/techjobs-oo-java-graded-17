@@ -101,6 +101,7 @@ public class JobTest {
     @Test
     public void testToStringHandlesEmptyField(){
         Job job6 = new Job();
+
         String actual = job6.toString();
         String expected = System.lineSeparator() + "ID: " + job6.getId() + System.lineSeparator() + "Employer: Data not available" +
                 System.lineSeparator() + "Location: Data not available" + System.lineSeparator() + "Position Type: Data not available" +
