@@ -39,4 +39,9 @@ public abstract class JobField {
         return value;
     }
 
+    //intelliJ suggested creating an isEmpty() method to check for empty fields because of inconvertible types.
+    //isEmpty worked on the name because it was a String, but the others were objects the classes
+    public boolean isEmpty(){
+        return getValue().isEmpty();
+    }
 }

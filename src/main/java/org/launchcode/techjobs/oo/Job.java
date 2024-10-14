@@ -106,15 +106,16 @@ public class Job extends JobField {
     @Override
     public String toString() {
         String newline = System.lineSeparator();
-        if(getEmployer()==null && getLocation()==null && getLocation()==null && getPositionType()==null && getCoreCompetency()==null){
+        if(getName()==null && getEmployer()==null && getLocation()==null && getPositionType()==null && getCoreCompetency()==null){
             return "OOPS! This job does not seem to exist.";
         } else {
             return newline +
                     "ID: " + getId() + newline +
-                    "Employer: " + (getEmployer() == null ? "Data not available" : getEmployer()) + newline +
-                    "Location: " + (getLocation() == null ? "Data not available" : getLocation()) + newline +
-                    "Position Type: " + (getPositionType() == null ? "Data not available" : getPositionType()) + newline +
-                    "Core Competencies: " + (getCoreCompetency() == null ? "Data not available" : getCoreCompetency()) + newline;
+                    "Name: " + (getName() == null || getName().isEmpty() ? "Data not available" : getName()) + newline +
+                    "Employer: " + (getEmployer() == null || getEmployer().isEmpty() ? "Data not available" : getEmployer()) + newline +
+                    "Location: " + (getLocation() == null || getLocation().isEmpty() ? "Data not available" : getLocation()) + newline +
+                    "Position Type: " + (getPositionType() == null || getPositionType().isEmpty()? "Data not available" : getPositionType()) + newline +
+                    "Core Competency: " + (getCoreCompetency() == null || getCoreCompetency().isEmpty() ? "Data not available" : getCoreCompetency()) + newline;
         }
         }
 

@@ -89,29 +89,28 @@ public class JobTest {
     public void testToStringContainsCorrectLabelsAndData(){
         Job job6 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         String actual = job6.toString();
-        String expected = System.lineSeparator() + "ID: " + job6.getId() + System.lineSeparator() + "Employer: " + job6.getEmployer() +
+        String expected = System.lineSeparator() + "ID: " + job6.getId() + System.lineSeparator() + "Name: " + job6.getName() + System.lineSeparator() + "Employer: " + job6.getEmployer() +
                 System.lineSeparator() + "Location: " + job6.getLocation() + System.lineSeparator() + "Position Type: " + job6.getPositionType() +
-                System.lineSeparator() + "Core Competencies: " + job6.getCoreCompetency() + System.lineSeparator();
+                System.lineSeparator() + "Core Competency: " + job6.getCoreCompetency() + System.lineSeparator();
         assertEquals(expected, actual);
     }
 
 
-    //So... the job will always have an ID. This field can't come up as Data not available because it is set with the constructor and not a arg passed in...right?
+    //So... the job will always have an ID. This field can't come up as Data not available because it is set with the constructor and not a arg passed in
     //TODO: If a field is empty, the method should add, “Data not available” after the label.
     @Test
     public void testToStringHandlesEmptyField(){
-        Job job6 = new Job();
+        Job job6 = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
 
         String actual = job6.toString();
-        String expected = System.lineSeparator() + "ID: " + job6.getId() + System.lineSeparator() + "Employer: Data not available" +
+        String expected = System.lineSeparator() + "ID: " + job6.getId() + System.lineSeparator() + "Name: Data not available" + job6.getName() + System.lineSeparator() + "Employer: Data not available" +
                 System.lineSeparator() + "Location: Data not available" + System.lineSeparator() + "Position Type: Data not available" +
-                System.lineSeparator() + "Core Competencies: Data not available" + System.lineSeparator();;
+                System.lineSeparator() + "Core Competency: Data not available" + System.lineSeparator();;
         assertEquals(expected, actual);
     }
 
 
-    //This messes with the test above. I can't just add a field arg in to make them different because neither of the two constructors would allow it. How do I test these two
-    //different tests using the empty job constructor
+
     //TODO: (Optional) If a Job object ONLY contains data for the id field, the method should return, “OOPS! This job does not seem to exist.”
     @Test
     public void testForJobsThatDontExist(){
