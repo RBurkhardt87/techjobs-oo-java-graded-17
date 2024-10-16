@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import javax.swing.text.Position;
 
+import static java.lang.System.lineSeparator;
 import static org.junit.Assert.*;
 
 
@@ -19,9 +20,7 @@ public class JobTest {
 
 }
 
-    // use getters to check the values for assertEquals--There were 2 ways: One that went from job object to param object and then got the value.
-    // IntelliJ suggested wrapping the jobObject.paramObject in a String.valueOf, which allowed access to the param object as a String I think....
-    // It was kind of tricky doing the assertTrue() without having the new objects stored in their own variables. Not sure if this is done correctly... but it passes
+
     //TODO: Test the full constructor:
     @Test
     public void testJobConstructorSetsAllFields(){
@@ -69,18 +68,13 @@ public class JobTest {
     @Test
     public void testToStringStartsAndEndsWithNewLine(){
         Job job6 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        boolean actual1 = job6.toString().startsWith(System.lineSeparator());
-        boolean actual2 = job6.toString().endsWith(System.lineSeparator());
+        String firstChar = String.valueOf(job6.toString().charAt(0));
+        String lastChar = String.valueOf(job6.toString().charAt(job6.toString().length()-1));
+        assertEquals(firstChar, lineSeparator());
+        assertEquals(lastChar, lineSeparator());
 
-//       String actual = job6.toString();
-//       String expected = System.lineSeparator() + System.lineSeparator();
-//       assertEquals(expected, actual);     <--- I DO NOT UNDERSTAND HOW TO DO THIS AS AN EQUAL. WHEN I START BUILDING MORE FOR toString, TEST FAILS BECAUSE THEY AREN'T EQUAL ANYMORE
-
-        assertTrue(job6.toString().startsWith(System.lineSeparator()));
-        assertTrue(job6.toString().endsWith(System.lineSeparator()));
-        //What about this... why wouldn't this work. Testing true for true with assertEquals()
-//        assertEquals(true, actual1);
-//        assertEquals(true, actual2);
+//        assertTrue(job6.toString().startsWith(System.lineSeparator()));
+//        assertTrue(job6.toString().endsWith(System.lineSeparator()));
     }
 
 
@@ -126,5 +120,7 @@ public class JobTest {
         Job job6 = new Job();
         String actual = job6.toString();
         String expected = "OOPS! This job does not seem to exist.";
+
+        assertEquals(expected, actual);
     }
 }

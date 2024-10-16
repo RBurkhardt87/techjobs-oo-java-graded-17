@@ -118,9 +118,7 @@ public class Job extends JobField {
         }
         }
 
-//        public static String lineSeparator(){
-//        return System.lineSeparator();
-//        }
+
 }
 
 //Ternary: condition ? exprIfTrue : exprIfFalse
