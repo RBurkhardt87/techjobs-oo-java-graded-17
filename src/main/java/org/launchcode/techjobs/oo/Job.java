@@ -2,6 +2,9 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
+import static java.lang.System.lineSeparator;
+
+
 public class Job extends JobField {
 
     private int id;
@@ -31,9 +34,6 @@ public class Job extends JobField {
         this.positionType = positionType;
         this.coreCompetency = coreCompetency;
     }
-
-    //* TRYING TO FIGURE OUT HOW TO ADD THE OPTIONAL UNIT TEST IN. DON'T KNOW ANY OTHER WAY THAN CREATING A NEW CONSTRUCTOR
-    //TODO: Create a constructor that takes in name only to test with
 
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
@@ -80,7 +80,6 @@ public class Job extends JobField {
 
 
     //Setters for fields (aside from id and nextID)
-
     public void setName(String name) {
         this.name = name;
     }
@@ -119,6 +118,9 @@ public class Job extends JobField {
         }
         }
 
+//        public static String lineSeparator(){
+//        return System.lineSeparator();
+//        }
 }
 
 //Ternary: condition ? exprIfTrue : exprIfFalse
