@@ -76,11 +76,11 @@ public class JobTest {
 //       String expected = System.lineSeparator() + System.lineSeparator();
 //       assertEquals(expected, actual);     <--- I DO NOT UNDERSTAND HOW TO DO THIS AS AN EQUAL. WHEN I START BUILDING MORE FOR toString, TEST FAILS BECAUSE THEY AREN'T EQUAL ANYMORE
 
-//        assertTrue(actual.startsWith(System.lineSeparator()));
-//        assertTrue(actual.endsWith(System.lineSeparator()));
+        assertTrue(actual1.startsWith(System.lineSeparator()));
+        assertTrue(actual2.endsWith(System.lineSeparator()));
         //What about this... why wouldn't this work. Testing true for true with assertEquals()
-        assertEquals(true, actual1);
-        assertEquals(true, actual2);
+//        assertEquals(true, actual1);
+//        assertEquals(true, actual2);
     }
 
 

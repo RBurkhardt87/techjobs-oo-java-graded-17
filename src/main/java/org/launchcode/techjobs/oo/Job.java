@@ -111,10 +111,10 @@ public class Job extends JobField {
             return newline +
                     "ID: " + getId() + newline +
                     "Name: " + (getName() == null || getName().isEmpty() ? "Data not available" : getName()) + newline +
-                    "Employer: " + (getEmployer() == null || getEmployer().isEmpty() ? "Data not available" : getEmployer()) + newline +
-                    "Location: " + (getLocation() == null || getLocation().isEmpty() ? "Data not available" : getLocation()) + newline +
-                    "Position Type: " + (getPositionType() == null || getPositionType().isEmpty()? "Data not available" : getPositionType()) + newline +
-                    "Core Competency: " + (getCoreCompetency() == null || getCoreCompetency().isEmpty() ? "Data not available" : getCoreCompetency()) + newline;
+                    "Employer: " + (getEmployer() == null || getEmployer().getValue().isEmpty() ? "Data not available" : getEmployer()) + newline +
+                    "Location: " + (getLocation() == null || getLocation().getValue().isEmpty() ? "Data not available" : getLocation()) + newline +
+                    "Position Type: " + (getPositionType() == null || getPositionType().getValue().isEmpty()? "Data not available" : getPositionType()) + newline +
+                    "Core Competency: " + (getCoreCompetency() == null || getCoreCompetency().getValue().isEmpty() ? "Data not available" : getCoreCompetency()) + newline;
         }
         }
 
